@@ -17,8 +17,106 @@ $(function(){
 })
 
 </script>
+
+	<style>
+	
+		table#book-detail {
+			width:30%;
+			margin:10px auto;
+			
+						
+		}
+		
+		table#book-detail .title td{
+			padding: 0.5rem 1rem;
+		background-image:url("static/images/파도.jpg");
+			border-bottom:1px solid gray;
+			text-align:center;
+			width:80%;
+			
+		}
+		
+		table#book-detail .info td:first-child {
+			display : flex;
+			justify-content: center;
+			align-items: center;
+			padding:10px;
+		}
+		
+		table#book-detail table th {
+			color: navy;
+			padding: 8px 12px;
+			text-align:right;
+			border-bottom: 1px solid black;
+		}
+		
+		table#book-detail table td {
+			border-bottom: 1px solid black;
+		
+		}
+		
+		table#book-detail .dummy {
+			padding: 30px;
+		}
+		
+		table#book-detail .desc-title th{
+			text-align:left;
+			padding: 10px 30px;
+			color:black;
+			background-color: lightgreen;
+		}
+		
+		table#book-detail .link th,
+		table#book-detail .link td{
+			background-color: #ccc;
+			padding:10px;
+		}
+		
+		table#book-detail .desc td{
+			padding: 15px;
+		
+		}
+		
+		section#book-detail {
+			width:60%;
+			border:1px solid green;
+			margin: 5px auto;
+			
+		}
+		
+	#update {
+	
+	width: 90% auto;
+		margin: 10px auto;
+		text-align: center;
+		padding :10px;
+	}	
+		
+	#update a  {
+ 	    display: inline-block;
+
+        text-decoration: none;
+        padding: 10px 15px;
+        background-color: #99CCFF;
+        color: black;
+
+        border-radius: 5px;
+}
+
+#update a:nth-child(1) {
+ 	background-color: #99CCFF;
+}
+
+
+
+
+
+	
+	
+	</style>
+
  <table id="book-detail">
-	 <tr class="title"><td colspan="2"><h3>자세히 보기</h3></td></tr>
+	 <tr class="title"><td colspan="2"><h3>Detail View</h3></td></tr>
 	 <tr class="info">
 	 
 	 	<td>
@@ -49,12 +147,9 @@ $(function(){
           		       
     </table>
     <section id="update">
-    	<a href="${rootPath }/update?seq=${ioVO.seq}">수정</a>
-    </section>
-    
-    <section id="delete">
-    	
-    	<a href="${rootPath }/delete?seq=${ioVO.seq}">삭제</a>
+    	<button><a href="${rootPath }/update?seq=${ioVO.seq}">수정</a></button>
+   
+    	<button><a href="${rootPath }/delete?seq=${ioVO.seq}">삭제</a></button>
     	
     </section>
 <hr /> <!-- 닫는 태그!! -->

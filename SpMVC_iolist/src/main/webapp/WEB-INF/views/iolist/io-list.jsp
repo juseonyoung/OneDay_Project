@@ -9,8 +9,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Loop SHOP 입니다</title>
 <script src="${rootPath}/static/js/io-list.js?ver=2905">
-	
+
 </script>
+
+<style>
+button  {
+ 	   display: flex;
+        margin: 10px auto;
+        border: none;
+	  
+}
+
+button a {
+ 	  display: inline-block;
+
+        text-decoration: none;
+        padding: 10px 15px;
+        background-color: #99CCFF;
+        color: black;
+
+        border-radius: 5px;
+	  
+}
+</style>
 <body>
 	<section>
 
@@ -61,29 +82,27 @@
 								<c:choose>
 									<c:when test="${ioVO.io_input=='false'}">
 										<td>${ioVO.io_price*ioVO.io_quan}</td>
+										<td>
 									</c:when>
 
-									<c:otherwise>
-										<td>0
-										<td>
-									</c:otherwise>
-
+									
 
 								</c:choose>
 
 								<c:choose>
 									<c:when test="${ioVO.io_input=='true'}">
+									<td>
 										<td>${ioVO.io_price*ioVO.io_quan}</td>
 									</c:when>
 
-									<c:otherwise>
-										<td>0
-										<td>
-									</c:otherwise>
-
-
 								</c:choose>
-
+								<c:if test="${i.last}">
+					<tr>
+						<td colspan=7>합계</td>
+						<td>380400</td>
+						<td>246000</td>
+					</tr>	
+				</c:if>
 							</tr>
 
 						</c:forEach>
@@ -96,7 +115,7 @@
 		</table>
 		<div id="writebox-link">
 
-			<a href="${rootPath }/input">상품추가</a>
+			<button><a href="${rootPath }/input">상품추가</a></button>
 
 		</div>
 

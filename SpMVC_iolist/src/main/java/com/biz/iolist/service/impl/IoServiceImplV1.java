@@ -55,7 +55,28 @@ public class IoServiceImplV1 implements IoService {
 		int ret = ioDao.delete(seq);
 		return ret;
 	}
-
+	
+	public List<IoVO> String(List<IoVO> iolist){
+		int isum=0;
+		int osum=0;
+		
+		for (IoVO iovo : iolist) {
+			if(iovo.isIo_input()) {
+				iovo.setIo_iprice(iovo.getIo_iprice()*iovo.getIo_quan());
+				
+				isum += iovo.getIo_iprice()*iovo.getIo_quan();
+			} else {
+				iovo.setIo_oprice(iovo.getIo_iprice()*iovo.getIo_quan());
+				
+				osum += iovo.getIo_iprice()*iovo.getIo_quan();
+			}
+			iovo.setIo_iprice(isum);
+			iovo.setIo_oprice(osum);
+		}
+		
+		
+		return iolist;
+	}
 	
 }
 	

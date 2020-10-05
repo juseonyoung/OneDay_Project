@@ -29,6 +29,9 @@ public class IoVO {
 	private int io_quan; //bumber
 	private int io_total; //number
 	
-	private int output_sum;
-	private int input_sum;
+	private int io_iprice;
+	private int io_oprice;
+	
+	private int io_output_sum;
+	private int io_input_sum;
 }
